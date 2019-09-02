@@ -1,0 +1,65 @@
+Olá!
+Meu nome é João e aqui estão algumas informações sobre o andamento do projeto.
+
+• Utilizei o express js e o heroku para uma pequena aplicação que pega meu
+"client_id" e o código secreto do Spotify e retorna em json via http.
+link: https://clonefy.herokuapp.com/token
+
+• Usei muito pouco dos recursos do spotify (alguns svgs e css relacionados) e basicamente
+reconstrui o front "do zero" com alguma classe ou elemento do original para poupar tempo, mas
+a grande maioria do código foi feito por mim. 
+
+O que foi feito:
+- Api em node/express para recuperar o token do Spotify
+- Visual muito próximo do Spotify original
+- Exibição de playlists, album.
+- Página de busca -> Visual e retorno da pesquisa.
+- Controle de estado (apenas o token utiliza por enquanto)
+
+
+
+Nem tudo são flores...
+• Acabei começando a parte visual antes de receber o teste e com isso, 
+fiz bem próximo do original, o teste era mais simples, mas eu estava bem, 
+porém no meio da semana, precisei parar e ao retomar, tive que deixar de lado algumas
+coisas.
+• Como usei controle de estado num nivel muito baixo até hj, tive que estudar durante o processo
+e talvez poderia ter usado melhor, porém entendi o conceito e aplicação. (O token está no state);
+Até comecei a aplicar na busca, mas e preferi dar andamento em outra coisa.
+
+O que está faltando: 
+- Tocar a prévia do som
+- Fazer a busca ficar armazenada no estado da aplicação.
+- Deixar a página do artista dinâmica (os dados estão recuperados, mas não deu tempo de ligar, porém essa e outras páginas na mesma situação, são extras que fiz à parte)
+- Página de busca -> Está retornando os dados da pesquisa, mas não tem 100% de ligação ou redirecionamento.
+- Perfumaria extrema, como melhorar a barra de progresso do player, pura estética e uma cor faltando.
+- Criar variáveis do Sass (faltou tempo e não tem muitas cores no fim das contas [não justifica])
+
+Considerações:
+Apesar da falta de tempo pra fazer algo melhor do que eu gostaria, acredito que 
+está em bom andamento e mostra muito do que o teste pede.
+Foi interessante, pois vi que somos todos humanos, inclusive me alivia ter visto
+pequenos erros no código deles, como redundância de CSS (sim, tem no meu código também, é claro) 
+e algumas coisas desnecessárias que com tempo, poderiam melhorar, como apesar de muito rápida,
+a api deles tem muitas conexões desnecessárias quando se busca algo.
+
+Tentei amenizar com algum delay e pipe pra esperar digitar, mas tomou mais tempo do que o esperado, 
+porém, ja evitei nos meus testes, metade das requisiões ao digitar por ex, algo com 15 caracteres.
+
+A parte responsiva deles não existe e eu tentei em algums momentos contornar, mas deixei de lado
+para fazer outras partes da aplicação, já que não era o foco principal.
+
+
+Qualquer dúvida, estou à disposição. 
+E aceito sugestões e dicas independente do resultado!
+
+Link do projeto no git: https://github.com/joaocarlosalves/ang-spotify
+Está escrito em Angular, e usei a biblioteca NGRX para state.
+
+-> http://angular.io
+-> http://ngrx.io
+
+
+Obrigado
+João Carlos Alves
+hello@joaocarlosalves.com
