@@ -1,0 +1,81 @@
+.aside-user-playlists {
+    .playlist-title-aside {
+        font-size: 11px;
+        line-height: 16px;
+        letter-spacing: .015em;
+        font-weight: bold;
+        color: #b3b3b3;
+        text-transform: uppercase;
+        letter-spacing: .16em;
+        margin: 20px 0 0 20px;
+    }
+    
+    .btn-new-playlist {
+        border: none;
+        background: transparent;
+        margin: 15px 0 0 0;
+        cursor: pointer;
+    
+        span {
+            font-weight: bold;
+            font-family: spotify-circular;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: .015em;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: none;
+            height: 32px;
+            line-height: 32px;
+            float: left;
+            transition: all .2s ease;
+        }
+        
+        svg {
+            background: rgba(255, 255, 255, 0.6);
+            width: 32px;
+            height: 32px;
+            padding: 4px;
+            float: left;
+            margin: 0 15px 0 25px;
+            transition: all .2s ease;
+        }
+
+        &:hover span {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        &:hover svg {
+            background: rgba(255, 255, 255, 1);
+        }
+    }
+
+    .user-playlists {
+        list-style: none;
+        margin-top: 12px;
+        float: left;
+
+        li {
+            float: left;
+            width: 100%;
+
+            a {
+                float: left;
+                height: 32px;
+                line-height: 32px;
+                transition: all .2s ease;
+                font-weight: normal;
+                font-size: 14px;
+                font-family: spotify-circular;
+                width: 100%;
+                color: rgba(255, 255, 255, 0.6);
+                text-decoration: none;
+                padding: 0 0 0 25px;
+                
+                &:hover {
+                    color: rgba(255, 255, 255, 1);
+                }
+            }
+
+        }
+    }
+}

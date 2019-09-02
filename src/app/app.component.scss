@@ -1,0 +1,38 @@
+.site-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: grid;
+    grid-auto-columns: 1fr 5fr;    
+}
+
+.header-upgrade {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+
+    .btn-black {
+        float: right;
+        background: transparent;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        margin: 24px 35px 0 20px;
+        cursor: pointer;
+        padding: 11px 44px;
+        background: rgba(24,24,24,.7);
+        font-size: 11px;
+        letter-spacing: 1px;
+        border-radius: 100px;
+        font-family: spotify-circular;
+        text-transform: uppercase;
+        transition: all .3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+            text-shadow: 0 0 1px rgba(255, 255, 255, .2);
+        }
+    }
+}

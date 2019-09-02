@@ -1,1 +1,347 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@include mat-core();
+$xpotify-primary: mat-palette($mat-indigo);
+$xpotify-accent: mat-palette($mat-pink, A200, A100, A400);
+$xpotify-warn: mat-palette($mat-red);
+$xpotify-theme: mat-light-theme($xpotify-primary, $xpotify-accent, $xpotify-warn);
+@include angular-material-theme($xpotify-theme);
+
+/* fonts */
+@import url('fonts.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.row {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+body {
+    font-family: spotify-circular;
+}
+
+section {
+    height: 100%;
+}
+
+.grad1 {
+    background: #86d62a; 
+    background: -moz-linear-gradient(-45deg,  #86d62a 0%, #080f0b 100%);
+    background: -webkit-linear-gradient(-45deg,  #86d62a 0%,#080f0b 100%); 
+    background: linear-gradient(135deg,  #86d62a 0%,#080f0b 100%); 
+    background-size: cover;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+.content-container {
+    position: absolute;
+    width: 85%;
+    width: calc(100% - 230px);
+    height: 100%;
+    top: 100px;
+    right: 0;
+}
+
+.content-result {
+    padding: 0 32px;
+    margin: 0 auto;
+    max-width: 1480px;
+}
+
+/* Results list */
+.main-result-list {
+    list-style: none;
+    
+    li {
+        float: left;
+        display: block;
+        width: 225px;
+        max-width: 300px;
+        position: relative;
+        padding-bottom: 2.5em;
+        margin: 0 15px 15px 0;        
+
+        .item-result-title .item-title,
+        .item-result-title a {
+            text-align: center;
+            font-weight: 900;
+            font-family: spotify-circular;
+            font-size: 15px;
+            line-height: 20px;
+            letter-spacing: .015em;
+            color: #fff;
+            text-transform: none;
+            -webkit-font-smoothing: antialiased;
+            text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+            margin-top: 8px;
+            text-decoration: none;
+            height: 20px;
+            overflow: hidden;
+        }
+
+        .item-result-title .item-name {
+            text-align: center;
+            font-weight: normal;
+            font-family: spotify-circular;
+            font-size: 15px;
+            line-height: 20px;
+            letter-spacing: .015em;
+            color: rgba(255, 255, 255, .6);
+            text-transform: none;
+            -webkit-font-smoothing: antialiased;            
+            margin-top: 8px;
+            text-decoration: none;
+            height: 20px;
+            overflow: hidden;
+        }
+
+        .cover {
+            width: 225px;
+            height: 225px;
+            z-index: 1;
+            float: left;
+        }
+
+        &:hover .mask {
+            display: block;
+        }
+
+        .mask {
+            width: 225px;
+            height: 225px;
+            background: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            z-index: 2;
+            display: none;
+            cursor: pointer;
+
+            .cover-art-playback {
+                -webkit-transition: none 33ms cubic-bezier(.3,0,.7,1);
+                transition: none 33ms cubic-bezier(.3,0,.7,1);
+                -webkit-transition-property: all;
+                transition-property: all;
+                background-color: transparent;
+                position: absolute;
+                z-index: 3;
+                width: 62px;
+                height: 62px;
+                margin-left: -31px;
+                margin-top: -31px;
+                top: 50%;
+                left: 50%;
+                color: rgba(255, 255, 255, 0.6);
+                border: 0;
+                border-radius: 500px;
+                -webkit-box-sizing: content-box;
+                box-sizing: content-box;
+                outline: none;
+                -webkit-box-shadow: inset 0 0 0 1px #b3b3b3;
+                box-shadow: inset 0 0 0 1px #b3b3b3;            
+
+                &:hover {
+                    color: rgba(255, 255, 255, 1);
+                }
+
+                svg {
+                    width: 25px;
+                    margin: 3px 0 0 6px;
+                }
+            }
+
+            .cover-art-playback:hover:after {
+                -webkit-box-shadow: inset 0 0 0 1px #fff;
+                box-shadow: inset 0 0 0 1px #fff;
+            }
+            
+            .cover-art-playback:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                border-radius: 500px;
+                -webkit-box-shadow: inset 0 0 0 1px #b3b3b3;
+                box-shadow: inset 0 0 0 1px #b3b3b3;
+            }
+        }
+    }
+}
+
+/* TXT */
+h1 {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -.005em;
+    font-weight: 900;
+    color: #fff;
+    text-transform: none;
+    margin: 24px 0;
+    float: left;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+/* BTN */
+.btn-green {
+    background-color: #1ed760;
+}
+
+.btn-black {
+    padding: 11px 44px;
+    background: rgba(24,24,24,.7);
+    color: #fff;
+    -webkit-box-shadow: inset 0 0 0 2px #b3b3b3;
+    box-shadow: inset 0 0 0 2px #b3b3b3;
+}
+
+.btn-transparent {
+    border: none;
+    background: transparent;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 11px 44px;
+    font-weight: 300;
+    color: #b3b3b3;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: .16em;
+    -webkit-transition: none 33ms cubic-bezier(.3,0,.7,1);
+    transition: none 33ms cubic-bezier(.3,0,.7,1);
+    -webkit-transition-property: all;
+    transition-property: all;
+    color: #fff;
+    margin-top: 16px;
+    border: 0;
+    border-radius: 500px;
+    padding: 13px;
+    min-width: 130px;
+    white-space: normal;
+    will-change: transform;
+    line-height: 1.6;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.no-margin {
+    margin: 0 0 0 0;
+}
+
+.no-padding {
+    padding: 0 0 0 0;
+}
+
+.header-buttons button {
+    margin-right: 15px;
+}
+
+/* ICONS */
+.spoticon-heart-active-24:before {
+    content: "\f3DC";
+    font-size: 24px;
+}
+
+.spoticon-ellipsis-16:before {
+    content: "\f12c";
+    font-size: 16px;
+}
+
+.spoticon-track-16:before {
+    content: "\f156";
+    font-size: 16px;
+}
+
+.spoticon-ellipsis-24:before {
+    content: "\f12c";
+    font-size: 24px;
+    position: relative;
+    top: 1px;
+}
+
+.spoticon-shuffle-16:before {
+    content: "\f144";
+    font-size: 16px;
+}
+
+.spoticon-skip-back-16:before {
+    content: "\f146";
+    font-size: 16px;
+}
+
+.spoticon-play-16:before {
+    content: "\f132";
+    font-size: 16px;
+}
+
+.spoticon-skip-forward-16:before {
+    content: "\f148";
+    font-size: 16px;
+}
+
+.spoticon-repeat-16:before {
+    content: "\f13e";
+    font-size: 16px;
+}
+
+.spoticon-queue-16:before {
+    content: "\f13a";
+    font-size: 16px;
+    -webkit-transform: translateX(-1px);
+    transform: translateX(-1px);
+}
+
+.spoticon-devices-16:before {
+    content: "\f213";
+    font-size: 16px;
+}
+
+.spoticon-volume-16:before {
+    content: "\f15e";
+    font-size: 16px;
+}
+
+.spoticon-heart-16:before {
+    content: "\f320";
+    font-size: 16px;
+}
+
+[class*=" spoticon-"]:before, [class^=spoticon-]:before {
+    font-family: glue1-spoticon;
+    font-style: normal;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: inherit;
+    vertical-align: bottom;
+    display: inline-block;
+    text-decoration: inherit;
+}

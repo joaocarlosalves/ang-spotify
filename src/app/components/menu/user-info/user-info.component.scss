@@ -1,0 +1,50 @@
+.user-info{
+    position: absolute;
+    width: 100%;
+    padding: 0 25px;
+    bottom: 110px;
+    
+    hr {
+        border: none;
+        background: rgba(255, 255, 255, 0.3);
+        float: left;
+        width: 100%;
+        height: 1px;
+    }
+
+    a.user-id {
+        color: rgba(255, 255, 255, 1);
+
+        svg {
+            width: 22px;
+        }
+    }
+
+    a {
+        float: left;
+        width: 100%;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: bold;
+        font-size: 14px;
+        font-family: spotify-circular;
+        text-decoration: none;
+        margin: 10px 0;
+        transition: all .2s ease;
+
+        svg {
+            float: left;
+            width: 20px;
+            margin-right: 15px;
+        }
+
+        span {
+            height: 20px;
+            line-height: 20px;
+            float: left;
+        }
+
+        &:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+    }
+}

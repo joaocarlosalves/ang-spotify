@@ -1,0 +1,61 @@
+.about {
+    .bio {
+        width: 63%;
+        float: left;
+        margin-bottom: 75px;
+    }
+
+    .where-listeners {
+        width: 33%;
+        float: right;
+        margin-bottom: 75px;
+    }
+
+    .ArtistAbout__paragraph,
+    p {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: .015em;
+        font-weight: var(--glue-font-weight-normal);
+        color: #b3b3b3;
+        text-transform: none;
+        margin-bottom: 1em;
+    }
+
+    .ArtistAbout__header,
+    h2 {
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: .015em;
+        font-weight: var(--glue-font-weight-black);
+        color: #fff;
+        text-transform: none;
+        margin-bottom: 1em;
+    }
+
+    .where-listeners {
+        ul {
+            list-style: none;
+            float: left;
+            width: 100%;
+
+            li {
+                float: left;
+                width: 100%;               
+                margin-bottom: 20px; 
+
+                h2 {
+                    color: white;
+                    margin-bottom: 0;
+                    font-size: 15px;
+                    font-weight: bold;
+                }
+
+                span {
+                    font-size: 14px;
+                    color: rgba(255, 255, 255, .6);
+                }
+            }
+        }
+    }
+}

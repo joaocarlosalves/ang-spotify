@@ -1,0 +1,18 @@
+<div class="row aside-user-playlists">
+    <span class="playlist-title-aside row">PLAYLISTS</span>
+
+    <div class="row">
+        <button (click)="modalNewPlaylist()" class="btn-new-playlist">
+            <svg shape-rendering="crispEdges" viewBox="0 0 36 36">
+                <path d="m28 20h-8v8h-4v-8h-8v-4h8v-8h4v8h8v4z"></path>
+            </svg>
+            <span>Criar playlist</span>
+        </button>
+    </div>
+
+    <ul class="user-playlists">
+        <li *ngFor="let userPlaylist of userPlaylists">
+            <a [routerLink]="['/playlist/', userPlaylists.url, 'id']">{{ userPlaylist.title }}</a>
+        </li>
+    </ul>
+</div>

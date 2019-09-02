@@ -1,0 +1,79 @@
+.overview {
+    position: relative;
+    margin-top: -155px;
+
+    .overview-fix {
+        margin-bottom: 75px;
+    }    
+    
+    .popular-tracks {
+        list-style: none;
+    
+        li {
+            float: left;
+            width: 100%;
+            height: 60px;                
+            line-height: 55px;                
+            padding: 2px 5px;
+            background: transparent;
+            color: white;
+            transition: all .2s ease;
+            
+            .icon-note {
+                float: left;
+                margin: 0 10px 0 9px;
+            }
+    
+            .icon-play {
+                display: none;
+                float: left;
+                width: 15px;
+                height:15px;
+                margin: 20px 10px 0 10px;
+            }
+    
+            .popular-track-title {
+                float: left;
+                margin-left: 15px;
+            }
+    
+            .track-cover {
+                float: left;
+                width: 56px;
+            }
+    
+            .btn-more-track-info {
+                display: none;
+                min-width: 30px;
+                width: 30px;
+                float: left;
+                margin: 15px 15px 0 0;
+    
+                .spoticon-ellipsis-16 {
+                    width: 30px;
+                }
+            }
+    
+            .popular-track-timer {
+                margin-right: 15px;
+            }
+    
+            &.popular-track-active,
+            &:hover {
+                background: rgba(0, 0, 0, .4);
+            }
+    
+            &.popular-track-active .icon-note,
+            &:hover .icon-note {
+                display: none;                    
+            }
+            
+            &.popular-track-active .icon-play,
+            &.popular-track-active .btn-more-track-info,
+            &:hover .icon-play, 
+            &:hover .btn-more-track-info {
+                display: block;                    
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+<nav class="container-tabs">
+    <ul>
+        <li *ngFor="let tab of tabs">
+            <a href="" [class.active-tab]="tab.active==true">{{ tab.title }}</a>
+        </li>
+    </ul>
+</nav>

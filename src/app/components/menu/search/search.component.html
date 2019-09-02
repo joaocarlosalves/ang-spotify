@@ -1,0 +1,173 @@
+<div class="container-search">
+    <div class="bg-search"></div>
+
+    <form [formGroup]='searchForm' class="row container-search-input">
+        <div class="content-result">
+            <input (ngModelChange)="onChangeSearch($event)" formControlName='searchInput' [(ngModel)]="search" type="text" placeholder="Comece a escrever..." />
+        </div>
+    </form>
+
+    <!-- Initial page -->
+    <div *ngIf="pageState == 'start'">
+
+
+    </div>
+
+    <!-- Results -->
+    <div *ngIf="pageState == 'search'">
+        <div class="content-result" *ngIf="results">
+            <div class="row">
+                <!-- NAV -->
+                <nav class="row nav-result-tabs">
+                    <ul>
+                        <li (click)="showSearchContent('all')">PRINCIPAIS RESULTADOS</li>
+                        <li (click)="showSearchContent('artists')" *ngIf="artists">ARTISTAS</li>
+                        <!--<li (click)="showSearchContent('tracks')" *ngIf="content == 'tracks'">MÚSICAS</li>-->
+                        <li (click)="showSearchContent('albums')" *ngIf="albums">ÁLBUNS</li>
+                        <li (click)="showSearchContent('playlists')" *ngIf="playlists">PLAYLISTS</li>
+                    </ul>
+                </nav>
+                <!-- NAV -->
+    
+                <!-- ARTIST -->
+                <div *ngIf="content == 'all' || content == 'artists'" class="row result-artist">
+                    <h1 class="row" *ngIf="artists">Artistas</h1>
+                    <ul class="main-result-list">
+                        <li [routerLink]="['/artist/'+artist.id]" *ngFor="let artist of artists">   
+                            <div class="mask">
+                                <button class="cover-art-playback">
+                                    <svg class="icon-play" viewBox="0 0 85 100">
+                                        <path fill="currentColor" d="M81 44.6c5 3 5 7.8 0 10.8L9 98.7c-5 3-9 .7-9-5V6.3c0-5.7 4-8 9-5l72 43.3z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <div *ngIf="artist.images == ''">
+                                <img src="../../../../assets/img/default-no-avatar.png" class="cover" />
+                            </div>
+                                                
+                            <div *ngFor="let img of artist.images; let i = index">
+                                <div *ngIf="i == 0 && img.url != ''">
+                                    <img [src]="[img.url]" class="cover" />
+                                </div>
+                            </div>
+    
+                            <div class="row item-result-title">
+                                <a class="row">{{ artist.name }}</a>
+                            </div>   
+                        </li>
+                    </ul>
+                </div>  
+                <!-- ARTIST -->
+    
+                <!-- ALBUM -->
+                <div *ngIf="content == 'all' || content == 'albums'" class="row result-album">
+                    <h1 class="row" *ngIf="albums">Albuns</h1>
+                    <ul class="main-result-list">
+                        <li [routerLink]="['/album/'+album.id]" *ngFor="let album of albums">
+                            <div class="mask">
+                                <button class="cover-art-playback">
+                                    <svg class="icon-play" viewBox="0 0 85 100">
+                                        <path fill="currentColor" d="M81 44.6c5 3 5 7.8 0 10.8L9 98.7c-5 3-9 .7-9-5V6.3c0-5.7 4-8 9-5l72 43.3z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <div *ngIf="album.images == ''">
+                                <img src="../../../../assets/img/default-no-avatar.png" class="cover" />
+                            </div>
+                                                
+                            <div *ngFor="let img of album.images; let i = index">
+                                <div *ngIf="i == 0 && img.url != ''">
+                                    <img [src]="[img.url]" class="cover" />
+                                </div>
+                            </div>
+    
+                            <div class="row item-result-title">
+                                <span class="row item-title">{{ album.name }}</span>
+                                <div *ngFor="let artistName of album.artists; let i = index">
+                                    <span *ngIf="i == 0" class="row item-name">{{ artistName.name }}</span>
+                                </div>                            
+                            </div>   
+                        </li>
+                    </ul>
+                </div>
+                <!-- ALBUM -->
+    
+                <!-- PLAYLIST -->
+                <div *ngIf="content == 'all' || content == 'playlists'" class="row result-playlist">
+                    <h1 class="row" *ngIf="playlists">Playlists</h1>
+                    <ul class="main-result-list">
+                        <li [routerLink]="['/playlist/'+playlist.id]" *ngFor="let playlist of playlists">
+                            <div class="mask">
+                                <button class="cover-art-playback">
+                                    <svg class="icon-play" viewBox="0 0 85 100">
+                                        <path fill="currentColor" d="M81 44.6c5 3 5 7.8 0 10.8L9 98.7c-5 3-9 .7-9-5V6.3c0-5.7 4-8 9-5l72 43.3z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <div *ngIf="playlist.images == ''">
+                                <img src="../../../../assets/img/default-no-avatar.png" class="cover" />
+                            </div>
+                                                
+                            <div *ngFor="let img of playlist.images; let i = index">
+                                <div *ngIf="i == 0 && img.url != ''">
+                                    <img [src]="[img.url]" class="cover" />
+                                </div>
+                            </div>
+    
+                            <div class="row item-result-title">
+                                <span class="row item-title">{{ playlist.name }}</span>                                                        
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- PLAYLIST -->
+
+                <!-- TRACKS -->
+                <div *ngIf="content == 'all' || content == 'tracks'" class="row result-tracks">
+                    <h1 class="row" *ngIf="tracks">Faixas</h1>
+                    <ul class="main-result-list">
+                        <li [routerLink]="['/tracks/'+tracks.id]" *ngFor="let track of tracks">
+                            <div class="mask">
+                                <button class="cover-art-playback">
+                                    <svg class="icon-play" viewBox="0 0 85 100">
+                                        <path fill="currentColor" d="M81 44.6c5 3 5 7.8 0 10.8L9 98.7c-5 3-9 .7-9-5V6.3c0-5.7 4-8 9-5l72 43.3z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <div *ngIf="tracks.images == ''">
+                                <img src="../../../../assets/img/default-no-avatar.png" class="cover" />
+                            </div>
+                                                
+                            <div *ngFor="let img of tracks.images; let i = index">
+                                <div *ngIf="i == 0 && img.url != ''">
+                                    <img [src]="[img.url]" class="cover" />
+                                </div>
+                            </div>
+    
+                            <div class="row item-result-title">
+                                <span class="row item-title">{{ tracks.name }}</span>                                                        
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- TRACKS -->
+    
+                <div class="mg-bt-fix"></div>
+    
+                <button (click)="ooo()" style="width: 300px; height: 200px; position: absolute; top: 150px; left: 200px; display: none;" type="button">BUSCAR</button>
+            </div>
+        </div>    
+    
+        <!-- Sem resultados -->
+        <div *ngIf="!results" class="row no-results">
+            <h2 class="row">Nenhum resultado encontrado para "{{ search }}"</h2>
+            <span class="row">Confira se você digitou corretamente ou use menos palavras-chave ou palavras-chave diferentes.</span>
+        </div>
+    </div>
+</div>
+
+

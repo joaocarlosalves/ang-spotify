@@ -1,0 +1,94 @@
+<div class="content-result">
+    <div class="playlist album" *ngIf="resultAlbum != ''">
+        <div class="playlist-info">
+            <div class="playlist-cover">
+                <div class="mask">
+                    <button class="cover-art-playback">
+                        <svg class="icon-play" viewBox="0 0 85 100">
+                            <path fill="currentColor" d="M81 44.6c5 3 5 7.8 0 10.8L9 98.7c-5 3-9 .7-9-5V6.3c0-5.7 4-8 9-5l72 43.3z"></path>
+                        </svg>
+                    </button>
+                    <a href="">
+                        <div 
+                            class="cover-art-image cover-art-image-loaded" 
+                            style="background-image: https://i.scdn.co/image/653158097fe615908b4cca16af4e08d9487d40a4">
+                        </div>
+                    </a>
+                </div>                
+                                    
+                <div *ngFor="let img of disco.images; let i = index">
+                    <div *ngIf="i == 0 && img.url != ''">
+                        <img [src]="[img.url]" class="cover" />
+                    </div>
+                </div>
+                
+                <div *ngIf="disco.images == ''">
+                    <img src="../../../../assets/img/default-no-avatar.png" class="cover" />
+                </div>
+            </div>
+
+            <div class="playlist-info-card">
+                <div class="row item-result-title">
+                    <h1 class="playlist-name">{{ disco.name }}</h1>
+                    <a [routerLink]="['/artist/', disco.id, 'id']"
+                        class="row playlist-artist-name">
+                        <span *ngFor="let artist of artists; let i = index">
+                            <span *ngIf="i == 0">{{ artist.name }}</span>
+                        </span>
+                    </a>
+                </div>
+    
+                <div class="row btn-play-desk">
+                    <button class="btn btn-green">PLAY</button>
+                </div>
+    
+                <p class="row playlist-track-counter">
+                    {{ disco.release_date | slice:0:4}} • {{ disco.total_tracks }} MÚSICAS
+                </p>
+    
+                <div class="row playlist-like-container">
+                    <button class="btn btn-green btn-play-mobile">PLAY</button>
+
+                    <button class="btn btn-transparent btn--narrow">
+                        <div class="spoticon-heart-active-24"></div>
+                    </button>
+    
+                    <button class="btn btn-transparent btn--narrow">
+                        <div class="spoticon-ellipsis-24"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <ul class="playlist-tracks">
+            <li *ngFor="let track of tracks">
+                <span class="icon-note spoticon-track-16"></span>
+
+                <svg class="icon-play" viewBox="0 0 85 100">
+                    <path fill="currentColor" d="M81 44.6c5 3 5 7.8 0 10.8L9 98.7c-5 3-9 .7-9-5V6.3c0-5.7 4-8 9-5l72 43.3z"></path>
+                </svg>
+
+                <div class="container-playlist-info">
+                    <span class="popular-track-title">{{ track.name }}</span>
+
+                    <div class="row">
+                        <div *ngFor="let artist of artists; let i = index">
+                            <a [routerLink]="['/artist/', disco.id, 'id']" class="popular-track-artist">
+                                {{ artist.name }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fr">
+                    <button class="btn-more-track-info btn btn-transparent no-margin no-padding">
+                        <div class="spoticon-ellipsis-16"></div>
+                    </button>
+
+                    <span class="popular-track-timer">2:33</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+    

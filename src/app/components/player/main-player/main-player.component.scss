@@ -1,0 +1,124 @@
+.main-player {
+    text-align: center;
+
+    .container-player-controls {
+        margin-bottom: 12px;
+        width: 250px;
+        margin: 0 auto;
+        float: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+        button {
+            border: none;
+            cursor: pointer;
+            background: transparent;
+            color: #b3b3b3;
+            width: 32px;
+            min-width: 32px;
+            height: 32px;
+            position: relative;
+            transition: all .2s ease;
+            text-align: center;
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        .btn-play {
+            border: 1px solid #b3b3b3;
+            border-radius: 100px;
+        }
+    }
+
+    .container-player-timer {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+
+        .timer-total,
+        .timer-passed {
+            font-size: 11px;
+            line-height: 16px;
+            letter-spacing: .015em;
+            min-width: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 8px;
+        }
+
+        .timer-total {
+            margin-left: 5px;
+        }
+
+        .container-player-timer-bar {
+            position: relative;
+            width: 100%;
+        }
+    }
+
+    input[type="range"] {
+        outline: 0;
+        border: 0;
+        border-radius: 500px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0px 0;
+        transition: box-shadow 0.2s ease-in-out;
+
+        // Chrome
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            & {
+                overflow: hidden;
+                height: 6px;
+                -webkit-appearance: none;
+                background-color: #222;
+            }
+
+            &::-webkit-slider-runnable-track {
+                height: 6px;
+                -webkit-appearance: none;
+                color: #444;
+                margin-top: -5px;
+                transition: box-shadow 0.2s ease-in-out;
+            }
+
+            &::-webkit-slider-thumb {
+                width: 10px;
+                -webkit-appearance: none;
+                height: 10px;
+                cursor: -webkit-grab;
+                box-shadow: -322px 0 0 320px white, inset 0 0 0 40px white;
+                border-radius: 50%;
+                transition: box-shadow 0.2s ease-in-out;
+                position: relative;
+            }
+
+            &:active::-webkit-slider-thumb {
+                box-shadow: -322px 0 0 320px white, inset 0 0 0 3px white;
+            }
+        }
+
+        &::-moz-range-progress {
+            background-color: white; 
+        }
+
+        &::-moz-range-track {  
+            background-color: white;
+        }
+    }
+}
+

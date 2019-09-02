@@ -1,0 +1,63 @@
+.player-track-data {
+    .track-data-cover {
+        float: left;
+        width: 56px;
+        height: 56px;
+        margin-right: 15px;
+    }
+
+    .track-data {
+        height: 56px;
+        float: left;
+        margin-right: 20px;
+        
+        div {
+            font-family: spotify-circular;
+            color: white;        
+        } 
+
+        .track-title {
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: .015em;
+            color: #fff;
+            text-align: left;
+            margin-top: 10px;
+            font-weight: bold;
+            width: auto;
+            clear: both;
+        }
+
+        .track-artist {
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: .015em;
+            text-align: left;
+            color: rgba(255, 255, 255, .6);
+            width: auto;
+            clear: both;
+        }
+    }
+
+    .btn-container{
+        margin-top: 22px;
+        float: left;
+
+        button {            
+            background: transparent;
+            width: 16px;
+            height: 16px;
+            color: white;
+            float: left;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            transition: all .2s ease;
+            cursor: pointer;
+            margin-right: 15px;
+
+            &:hover {
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+    }
+}

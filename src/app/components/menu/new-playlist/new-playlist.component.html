@@ -1,0 +1,30 @@
+<div class="mask-modal" *ngIf="showModal">
+    <div class="modal-container">
+        <div class="row">
+            <button (click)="closeModal()" class="btn btn-transparent btn-close-modal" style="width: 32px;">
+                <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <title>Close</title>
+                    <path d="M31.098 29.794L16.955 15.65 31.097 1.51 29.683.093 15.54 14.237 1.4.094-.016 1.508 14.126 15.65-.016 29.795l1.414 1.414L15.54 17.065l14.144 14.143" fill="#fff" fill-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+
+        <h1 class="row">Criar nova playlist</h1>
+
+        <div class="row">
+            <div class="container-form">
+                <div class="centered-container">
+                    <label class="row">Nome da playlist</label>
+                    <input class="row" type="text" placeholder="Nova playlist" />
+                </div>
+            </div>
+
+            <div class="row ct-btn-modal">
+                <div (click)="closeModal()" class="centered-container">
+                    <button class="btn-centered btn btn-black">CANCELAR</button>
+                    <button class="btn-centered btn btn-green">CRIAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

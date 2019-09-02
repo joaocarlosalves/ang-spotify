@@ -1,0 +1,83 @@
+.player-config {
+    float: right;
+    margin-top: 20px;
+
+    button {            
+        background: transparent;
+        width: 16px;
+        height: 16px;
+        color: white;
+        float: left;
+        border: none;
+        color: rgba(255, 255, 255, 0.6);
+        transition: all .2s ease;
+        cursor: pointer;
+        margin-right: 15px;
+
+        &:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+    }
+
+    .container-volume,
+    .volume-slide {
+        float: left;
+    }
+
+    .volume-slide {
+        width: 100px;
+        margin-top: -4px;
+    }
+
+    input[type="range"] {
+        outline: 0;
+        border: 0;
+        border-radius: 500px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0px 0;
+        transition: box-shadow 0.2s ease-in-out;
+
+        // Chrome
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            & {
+                overflow: hidden;
+                height: 6px;
+                -webkit-appearance: none;
+                background-color: #222;
+            }
+
+            &::-webkit-slider-runnable-track {
+                height: 6px;
+                -webkit-appearance: none;
+                color: #444;
+                margin-top: -5px;
+                transition: box-shadow 0.2s ease-in-out;
+            }
+
+            &::-webkit-slider-thumb {
+                width: 10px;
+                -webkit-appearance: none;
+                height: 10px;
+                cursor: -webkit-grab;
+                box-shadow: -322px 0 0 320px white, inset 0 0 0 40px white;
+                border-radius: 50%;
+                transition: box-shadow 0.2s ease-in-out;
+                position: relative;
+            }
+
+            &:active::-webkit-slider-thumb {
+                box-shadow: -322px 0 0 320px white, inset 0 0 0 3px white;
+            }
+        }
+
+        &::-moz-range-progress {
+            background-color: white; 
+        }
+
+        &::-moz-range-track {  
+            background-color: white;
+        }
+    }
+
+}
