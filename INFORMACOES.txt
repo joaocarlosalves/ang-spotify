@@ -15,6 +15,7 @@ O que foi feito:
 - Exibição de playlists, album.
 - Página de busca -> Visual e retorno da pesquisa.
 - Controle de estado (apenas o token utiliza por enquanto)
+- View de nova playlist (sem funcionalidade ainda).
 
 
 
@@ -36,12 +37,17 @@ O que está faltando:
 - Criar variáveis do Sass (faltou tempo e não tem muitas cores no fim das contas [não justifica])
 
 Considerações:
-Apesar da falta de tempo pra fazer algo melhor do que eu gostaria, acredito que 
-está em bom andamento e mostra muito do que o teste pede.
+Apesar da falta de tempo (no fim, acho que usei uns 4 dias e meio no total) 
+pra fazer algo melhor do que eu gostaria, acredito que 
+está em bom andamento e mostra muito do que o teste pede e algumas a mais, outras não, faz parte do processo.
+
 Foi interessante, pois vi que somos todos humanos, inclusive me alivia ter visto
 pequenos erros no código deles, como redundância de CSS (sim, tem no meu código também, é claro) 
 e algumas coisas desnecessárias que com tempo, poderiam melhorar, como apesar de muito rápida,
 a api deles tem muitas conexões desnecessárias quando se busca algo.
+Eles por exemplo, não consideram 3 dos meus albums (sim, faço música e estou no Spotify como "Cleeve Morris")
+sendo que tenho 8 e eles exibem 5. O que eu fiz no caso foi um filtro adcionando uma condição que
+pega o número de faixas e determina que 2 ou mais, é um album e por aí vai.
 
 Tentei amenizar com algum delay e pipe pra esperar digitar, mas tomou mais tempo do que o esperado, 
 porém, ja evitei nos meus testes, metade das requisiões ao digitar por ex, algo com 15 caracteres.
