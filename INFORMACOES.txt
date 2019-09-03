@@ -18,7 +18,6 @@ O que foi feito:
 - View de nova playlist (sem funcionalidade ainda).
 
 
-
 Nem tudo são flores...
 • Acabei começando a parte visual antes de receber o teste e com isso, 
 fiz bem próximo do original, o teste era mais simples, mas eu estava bem, 
@@ -35,6 +34,10 @@ O que está faltando:
 - Página de busca -> Está retornando os dados da pesquisa, mas não tem 100% de ligação ou redirecionamento.
 - Perfumaria extrema, como melhorar a barra de progresso do player, pura estética e uma cor faltando.
 - Criar variáveis do Sass (faltou tempo e não tem muitas cores no fim das contas [não justifica])
+
+Páginas "funcionais"
+/playlist/{id}
+/album/{id}
 
 Considerações:
 Apesar da falta de tempo (no fim, acho que usei uns 4 dias e meio no total) 
